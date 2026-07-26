@@ -1,0 +1,43 @@
+:root {
+  --color-white: #ffffff;
+  --color-dark-green: #1B4332;
+  --color-light-green: #B7E4C7;
+  --color-natural: #F1F5F2;
+  --color-text: #333333;
+  --max-width: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--color-white);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
