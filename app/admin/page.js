@@ -22,38 +22,62 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="container" style={{ maxWidth: '400px', margin: '3rem auto', padding: '0 1rem' }}>
-      <h1 style={{ textAlign: 'center' }}>Admin Login</h1>
-      <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          autoComplete="email"
-          style={{ fontSize: '1rem' }}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          autoComplete="current-password"
-          style={{ fontSize: '1rem' }}
-        />
-        {error && <p style={{ color: 'red', fontSize: '0.9rem' }}>{error}</p>}
+    <div style={{ maxWidth: '400px', margin: '4rem auto', padding: '0 1rem' }}>
+      <h1 style={{ textAlign: 'center', color: '#1B4332', marginBottom: '2rem' }}>
+        Admin Login
+      </h1>
+      <form onSubmit={handleLogin}>
+        <div style={{ marginBottom: '1rem' }}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            style={{
+              width: '100%',
+              padding: '0.85rem',
+              borderRadius: '8px',
+              border: '1px solid #ccc',
+              fontSize: '1rem',
+              boxSizing: 'border-box',
+            }}
+          />
+        </div>
+        <div style={{ marginBottom: '1rem' }}>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            style={{
+              width: '100%',
+              padding: '0.85rem',
+              borderRadius: '8px',
+              border: '1px solid #ccc',
+              fontSize: '1rem',
+              boxSizing: 'border-box',
+            }}
+          />
+        </div>
+        {error && (
+          <p style={{ color: 'red', fontSize: '0.9rem', marginBottom: '1rem' }}>
+            {error}
+          </p>
+        )}
         <button
           type="submit"
           style={{
-            backgroundColor: 'var(--dark-green)',
-            color: 'white',
+            width: '100%',
             padding: '0.85rem',
-            borderRadius: '8px',
+            backgroundColor: '#1B4332',
+            color: 'white',
             border: 'none',
+            borderRadius: '8px',
             fontWeight: 'bold',
             fontSize: '1rem',
+            cursor: 'pointer',
           }}
         >
           Sign In
