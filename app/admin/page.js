@@ -12,6 +12,7 @@ export default function AdminLoginPage() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError('');
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     if (error) {
       setError(error.message);
@@ -21,8 +22,8 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="container" style={{ maxWidth: '400px', margin: '4rem auto', padding: '0 1rem' }}>
-      <h1 style={{ color: 'var(--color-dark-green)', textAlign: 'center', marginBottom: '2rem' }}>Admin Login</h1>
+    <div className="container" style={{ maxWidth: '400px', margin: '3rem auto', padding: '0 1rem' }}>
+      <h1 style={{ textAlign: 'center' }}>Admin Login</h1>
       <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <input
           type="email"
@@ -30,7 +31,8 @@ export default function AdminLoginPage() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ccc' }}
+          autoComplete="email"
+          style={{ fontSize: '1rem' }}
         />
         <input
           type="password"
@@ -38,18 +40,20 @@ export default function AdminLoginPage() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ccc' }}
+          autoComplete="current-password"
+          style={{ fontSize: '1rem' }}
         />
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {error && <p style={{ color: 'red', fontSize: '0.9rem' }}>{error}</p>}
         <button
           type="submit"
           style={{
-            backgroundColor: 'var(--color-dark-green)',
+            backgroundColor: 'var(--dark-green)',
             color: 'white',
-            padding: '0.75rem',
+            padding: '0.85rem',
             borderRadius: '8px',
             border: 'none',
             fontWeight: 'bold',
+            fontSize: '1rem',
           }}
         >
           Sign In
@@ -57,4 +61,4 @@ export default function AdminLoginPage() {
       </form>
     </div>
   );
-            }
+  }
