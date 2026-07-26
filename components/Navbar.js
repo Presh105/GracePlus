@@ -6,7 +6,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav style={{ backgroundColor: 'var(--dark-green)', padding: '1rem 0' }}>
+    <nav style={{ backgroundColor: 'var(--color-dark-green)', padding: '1rem 0' }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Link href="/" style={{ color: 'white', fontWeight: 'bold', fontSize: '1.5rem' }}>
           Grace Plus
@@ -44,7 +44,7 @@ export default function Navbar() {
             top: 60px;
             left: 0;
             right: 0;
-            background: var(--dark-green);
+            background: var(--color-dark-green);
             padding: 1rem;
             gap: 1rem;
             z-index: 100;
@@ -56,4 +56,4 @@ export default function Navbar() {
       `}</style>
     </nav>
   );
-            }
+  }
